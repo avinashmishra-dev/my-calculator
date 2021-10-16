@@ -1,7 +1,14 @@
-const Input = ({text,result}) => {
-  return <div>
-      <div>{text}</div>
-      <div>{result}</div>
-  </div>;
+import classes from "./Input.module.css";
+
+const Input = ({ text }) => {
+  return (
+    <div>
+      <input
+        className={classes.input}
+        type="text"
+        defaultValue={Array.isArray(text) ? text.join("") : ""}
+      />
+    </div>
+  );
 };
 export default Input;

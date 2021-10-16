@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Button from "./Button/Button";
 import Input from "./Input/Input";
+import classes from "./App.module.css";
 import * as math from "mathjs";
 
 const App = () => {
@@ -31,9 +32,9 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className={`${classes.card}`}>
+      <Input text={text} result={result} handleClick={addToText} />
       <div>
-        <Input text={text} result={result} handleClick={addToText} />
         <Button symbol={"7"} handleClick={addToText} />
         <Button symbol={"8"} handleClick={addToText} />
         <Button symbol={"9"} handleClick={addToText} />
@@ -58,6 +59,7 @@ const App = () => {
         <Button symbol={"-"} handleClick={addToText} />
       </div>
       <Button handleClick={clearHandler} symbol={"Clear"}></Button>
+      <p className={classes.output}> Output: {result} </p>
     </div>
   );
 };
